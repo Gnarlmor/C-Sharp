@@ -5,32 +5,21 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
-    public class Produse
+    public abstract class Produse
     {
-        private long codDeBare;
-        public string denumireProdus{get; set;}
-        public string producatorProdus{get; set;}
-        public float pretProdus{get; set;}
+        public string Denumire{get; set;}
+        public double Pret{get; set;}
+        public int Cantitate{get; set;}
 
-        public Produse(long bar, string denumire, string producator, float pret)
+        public Produse( string denumire, double pret, int cantitate)
         {
-            bar = codDeBare;
-            denumire = denumireProdus;
-            producator = producatorProdus;
-            pret = pretProdus;
+            
+            denumire = Denumire;
+            pret = Pret;
+            cantitate = Cantitate;
         }
 
-        public long codBar
-        {
-            get
-            {
-                return codDeBare;
-            }
-            set
-            {
-                if(value > 0)
-                codDeBare = value;
-            }
-        }
+        //Metoda abstracta afisare produse
+        public abstract void AfisareProduse();
     }
 }
